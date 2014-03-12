@@ -18,6 +18,8 @@ module Matching
         lock_account!
 
         trade = Trade.create(ask_id: @ask.id, bid_id: @bid_id,
+                             ask_member_sn: @ask.member.sn,
+                             bid_member_sn: @bid.member.sn,
                              price: @price, volume: @volume,
                              currency: @market.id.to_sym, trend: trend)
 
